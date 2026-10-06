@@ -7,30 +7,39 @@ import CorporateTemplate from '../templates/CorporateTemplate'
 import CreativeTemplate from '../templates/CreativeTemplate'
 
 function ResumePreview() {
-  const {
-    resume,
-    selectedTemplate,
-  } = useResume()
+const {
+resume,
+selectedTemplate,
+} = useResume()
 
-  switch (selectedTemplate) {
-    case 'modern':
-      return <ModernTemplate resume={resume} />
+const renderTemplate = () => {
+switch (selectedTemplate) {
+case 'modern':
+return <ModernTemplate resume={resume} />
 
-    case 'executive':
-      return <ExecutiveTemplate resume={resume} />
 
-    case 'minimal':
-      return <MinimalTemplate resume={resume} />
+  case 'executive':
+    return <ExecutiveTemplate resume={resume} />
 
-    case 'corporate':
-      return <CorporateTemplate resume={resume} />
+  case 'minimal':
+    return <MinimalTemplate resume={resume} />
 
-    case 'creative':
-      return <CreativeTemplate resume={resume} />
+  case 'corporate':
+    return <CorporateTemplate resume={resume} />
 
-    default:
-      return <ModernTemplate resume={resume} />
-  }
+  case 'creative':
+    return <CreativeTemplate resume={resume} />
+
+  default:
+    return <ModernTemplate resume={resume} />
+}
+
+
+}
+
+return ( <div id="resume-preview">
+{renderTemplate()} </div>
+)
 }
 
 export default ResumePreview
