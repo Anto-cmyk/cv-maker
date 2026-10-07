@@ -1,25 +1,17 @@
 import {
   ArrowLeft,
   Eye,
-  Check,
-} from 'lucide-react'
+ } from 'lucide-react'
 
 import { useNavigate } from 'react-router-dom'
 
 import Button from '../components/Button'
 import ResumeForm from '../components/ResumeForm'
-import ResumePreview from '../components/ResumePreview'
-import { useResume } from '../context/ResumeContext'
-import { templates } from '../data/templates'
-
+  
 function Builder() {
   const navigate = useNavigate()
 
-  const {
-    selectedTemplate,
-    setSelectedTemplate,
-  } = useResume()
-
+   
   return (
     <div className="min-h-screen bg-slate-100">
 

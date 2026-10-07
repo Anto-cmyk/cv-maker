@@ -233,7 +233,7 @@ const options = {
   filename: safeFilename,
 
   image: {
-    type: 'jpeg',
+    type: 'jpeg' as const,
     quality: 0.98,
   },
 
@@ -250,7 +250,7 @@ const options = {
   jsPDF: {
     unit: 'mm',
     format: 'a4',
-    orientation: 'portrait',
+    orientation: 'portrait' as const,
     compress: true,
   },
 
